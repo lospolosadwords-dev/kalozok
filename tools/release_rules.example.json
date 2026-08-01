@@ -1,0 +1,38 @@
+{
+  "_comment": [
+    "Minta a tools/release_rules.json-hoz (az ÉLES fájl gitignore-olt, mert személyes",
+    "adatokat nevez meg — épp azt, amit ki kell venni a publikus kiadásból).",
+    "A 'find' Python-regex, a 'repl' sima csere-szöveg, az 'expect' a KÖTELEZŐ",
+    "találatszám: ha nem stimmel, a szinkron megáll (nem hagy ki csendben semmit).",
+    "A 'dotall': true kapcsolja a . = újsor viselkedést."
+  ],
+  "exclude_names": [
+    "valaki_arckepe.png",
+    "masik_arckep.png"
+  ],
+  "patches": [
+    {
+      "desc": "név→arckép hozzárendelés kiürítve",
+      "find": "const PORTRAITS=\\{[^}]*\\};",
+      "repl": "const PORTRAITS={}; // a publikus kiadásban nincs név→arckép kötés",
+      "expect": 1
+    },
+    {
+      "desc": "valódi személyekről mintázott ellenség-nevek generikusra cserélve",
+      "find": "'Egyik Név','Másik Név'",
+      "repl": "'Vasfogú Vilmos','Sebhelyes Sámuel'",
+      "expect": 1
+    },
+    {
+      "desc": "belső feltöltő-végpont lekérése kikapcsolva (friss klónon nulla hibás kérés)",
+      "find": "let _uploaded=\\[\\]; try\\{ fetch\\('upload\\.php\\?list=1'.*?\\n",
+      "repl": "const PORTRAIT_LIST_URL='';\nlet _uploaded=[];\n",
+      "expect": 1
+    }
+  ],
+  "forbidden": [
+    "upload.php",
+    "Egyik Név",
+    "Másik Név"
+  ]
+}

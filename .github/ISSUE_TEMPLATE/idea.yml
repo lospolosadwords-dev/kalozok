@@ -1,0 +1,19 @@
+name: 💡 Idea or feature request
+description: Something you would like the game to do
+labels: ["idea"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Magyarul is írhatsz nyugodtan.
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like?
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why would it make the game better?
+      description: What is annoying or missing today?

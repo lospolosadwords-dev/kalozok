@@ -1,0 +1,44 @@
+name: 🐛 Bug report
+description: Something is broken or behaves oddly
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Hungarian is fine too — magyarul is írhatsz.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: How can we reproduce it?
+      placeholder: |
+        1. New game, sailed east to the first port
+        2. Bought sugar, took a storm on the way back
+        3. …
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Bottom-left corner of the screen, e.g. v1.8.1
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Where did it happen?
+      options: ["Single player", "Multiplayer", "Deck view", "Port / trading", "Not sure"]
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and device
+      placeholder: Chrome 141 on Windows / Safari on iPhone 14
+  - type: textarea
+    id: console
+    attributes:
+      label: Console errors
+      description: F12 → Console. Paste anything red — this is usually what solves it.
+      render: text

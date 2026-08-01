@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 💬 Discord — Los Polos Games
+    url: https://discord.gg/sBfBdB8AzK
+    about: Chat with us, or shout about a bug in real time
+  - name: 📧 Collaboration, questions, anything else
+    url: mailto:janos@lospolo.hu
+    about: John Crystal — janos@lospolo.hu
+  - name: ▶ Play the game
+    url: https://skynet.lospolo.hu/kalozok/?lang=en
+    about: You do not need to install anything

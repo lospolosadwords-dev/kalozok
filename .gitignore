@@ -1,0 +1,30 @@
+# Multiplayer runtime storage — created by mp.php on the server, not source.
+mp_rooms/
+
+# Not part of the public release (see tools/sync_from_skynet.py):
+#   upload.php   internal portrait uploader with a fixed token
+#   portraits/   its upload target on the server
+#   the release rules name the personal content that gets stripped — local only
+upload.php
+/portraits/
+tools/release_rules.json
+
+# Only the AI-drawn pirate portraits are public; photographs of real people never are.
+assets/portraits/*
+!assets/portraits/ai*.png
+
+# Dev scratch
+_*.js
+_*.png
+*.bak.html
+/tmp/
+
+# Node (only the screenshot harness needs it)
+node_modules/
+package-lock.json
+
+# macOS / editors
+.DS_Store
+*.swp
+.idea/
+.vscode/
